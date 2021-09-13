@@ -5,6 +5,8 @@
 
 [Miro Board](https://miro.com/app/board/o9J_lxJyUuo=/)
 
+![The Lord Returns](/assets/images/Lord-Bendter.jpg "Lord Bendtner")
+
 ## Contributers
 > Bryson Havics
 > ---
