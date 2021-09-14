@@ -48,6 +48,7 @@
     <Compile Include="LeagueCreate.cs" />
     <Compile Include="LeagueListItem.cs" />
     <Compile Include="PlayerCreate.cs" />
+    <Compile Include="PlayerListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TeamCreate.cs" />
   </ItemGroup>

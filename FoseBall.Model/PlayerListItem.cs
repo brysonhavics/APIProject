@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace FoseBall.Model
 {
-    class PlayerListItem
+    public class PlayerListItem
     {
+        public string Name { get; set; }
+        public int Number { get; set; }
+        public string Position { get; set; }
     }
 }
