@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FoseBall.Data;
+using FoseBall.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +12,7 @@ namespace Foseball.Services
     {
         public InternationalService() { }
 
-        public bool CreateInternational(InternationCreate model)
+        public bool CreateInternational(InternationalCreate model)
         {
             var entity = new International()
             {
@@ -19,9 +21,9 @@ namespace Foseball.Services
                 Ranking = model.Ranking,
                 Name = model.Name, };
 
-            using (var ctx = new FoseballDbContext())
+            using (var ctx = new FoseBallDbContext())
             {
-                ctx.International.Add(entity);
+                ctx.Internationals.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }

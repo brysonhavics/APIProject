@@ -11,7 +11,7 @@ namespace FoseBall.Data
     {
         //Constructor with DbContext base
         public FoseBallDbContext() : base("DefaultConnection") { }
-
+        public DbSet<International> Internationals { get; set; }
         public DbSet<Player> Players { get; set; }
         public DbSet<League> Leagues { get; set; }
         public DbSet<Team> Teams { get; set; }
