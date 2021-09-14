@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,11 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="InternationalModel.cs" />
+=======
+    <Compile Include="InternationalCreate.cs" />
+>>>>>>> bc454cc0d3465c7b23f233e4957c14cff1a4e0b0
     <Compile Include="LeagueCreate.cs" />
     <Compile Include="LeagueListItem.cs" />
     <Compile Include="PlayerCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamCreate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
