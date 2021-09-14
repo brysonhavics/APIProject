@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InternationalModel.cs" />
     <Compile Include="LeagueCreate.cs" />
     <Compile Include="LeagueListItem.cs" />
+    <Compile Include="PlayerCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
