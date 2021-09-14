@@ -26,7 +26,13 @@ namespace FoseBall.WebAPI.Controllers
             return Ok();
         }
 
-
+        [HttpGet]
+        public IHttpActionResult GetPlayerById(int id)
+        {
+            PlayerService playerService = CreatePlayerService();
+            var player = playerService.GetPlayerById(id);
+            return Ok(player);
+        }
 
         private PlayerService CreatePlayerService()
         {
