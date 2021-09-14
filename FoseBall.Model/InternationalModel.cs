@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace FoseBall.Model
 {
-    class InternationalModel
+   public class InternationalModel
     {
+        public string InternationalId { get; set; }
+        public string Coach { get; set; }
+        public int Ranking  { get; set; }
+        public string Name { get; set; } 
     }
 }
