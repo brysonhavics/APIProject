@@ -43,11 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="InternationalModel.cs" />
-=======
     <Compile Include="InternationalCreate.cs" />
->>>>>>> bc454cc0d3465c7b23f233e4957c14cff1a4e0b0
     <Compile Include="LeagueCreate.cs" />
     <Compile Include="LeagueListItem.cs" />
     <Compile Include="PlayerCreate.cs" />

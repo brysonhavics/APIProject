@@ -16,7 +16,7 @@ namespace Foseball.Services
         {
             var entity = new Team() { TeamName = model.TeamName, LeagueId = model.LeagueId, Rank = model.Rank};
 
-            using (var ctx = new ApplicationDbContext())
+            using (var ctx = new FoseBallDbContext())
             {
                 ctx.Teams.Add(entity);
                 return ctx.SaveChanges() == 1;
