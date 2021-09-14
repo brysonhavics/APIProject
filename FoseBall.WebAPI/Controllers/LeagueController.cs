@@ -10,7 +10,6 @@ using FoseBall.Model;
 
 namespace FoseBall.WebAPI.Controllers
 {
-    [Authorize]
     public class LeagueController : ApiController
     {
         private LeagueService CreateLeagueService()
