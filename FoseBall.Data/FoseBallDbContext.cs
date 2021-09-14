@@ -14,5 +14,6 @@ namespace FoseBall.Data
 
         public DbSet<Player> Players { get; set; }
         public DbSet<League> Leagues { get; set; }
+        public DbSet<Team> Teams { get; set; }
     }
 }
