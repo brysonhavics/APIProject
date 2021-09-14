@@ -10,7 +10,7 @@ namespace FoseBall.Data
     public class International
     {
         [Key]
-        public string InternationalId { get; set; }
+        public int InternationalId { get; set; }
         [Required]
         public string Coach { get; set; }
         [Required]

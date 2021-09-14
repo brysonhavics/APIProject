@@ -55,6 +55,7 @@
     <Compile Include="InternationalModel.cs" />
     <Compile Include="InternationalCreate.cs" />
     <Compile Include="LeagueCreate.cs" />
+    <Compile Include="LeagueDetail.cs" />
     <Compile Include="LeagueListItem.cs" />
     <Compile Include="PlayerCreate.cs" />
     <Compile Include="PlayerDetail.cs" />

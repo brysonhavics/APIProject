@@ -16,7 +16,6 @@ namespace Foseball.Services
         {
             var entity = new International()
             {
-                InternationalId = model.InternationalId,
                 Coach = model.Coach,
                 Ranking = model.Ranking,
                 Name = model.Name, };
