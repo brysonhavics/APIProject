@@ -22,6 +22,24 @@ namespace Foseball.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public IEnumerable<TeamListItem> GetTeams()
+        {
+            using (var ctx= new FoseBallDbContext())
+            {
+                var query = ctx.Teams
+                    .Select(
+                    e =>
+                    new TeamListItem
+                    {
+                        TeamId = e.TeamId,
+                        TeamName = e.TeamName,
+                        Rank = e.Rank
+                    }
+                );
+                return query.ToArray();
+            }
+        }
     }
 }
 
