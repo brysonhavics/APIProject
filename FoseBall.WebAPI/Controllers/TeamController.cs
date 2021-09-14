@@ -9,6 +9,7 @@ using System.Web.Http;
 
 namespace FoseBall.WebAPI.Controllers
 {
+    [Authorize]
     public class TeamController : ApiController
     {
         private TeamServices CreateTeamService()
