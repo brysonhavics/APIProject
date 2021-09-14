@@ -40,6 +40,20 @@ namespace Foseball.Services
                 return query.ToArray();
             }
         }
+
+        public TeamShow GetTeamById(int id)
+        {
+            using(var ctx = new FoseBallDbContext())
+            {
+                var entity = ctx.Teams.Single(e => e.TeamId == id);
+                return new TeamShow
+                {
+                    TeamName = entity.TeamName,
+                    LeagueId = entity.LeagueId,
+                    Rank = entity.Rank,
+                };
+            }
+        }
     }
 }
 
