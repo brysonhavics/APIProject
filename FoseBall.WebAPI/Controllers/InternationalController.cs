@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Foseball.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,8 +11,8 @@ namespace FoseBall.WebAPI
     {
         private InternationalService CreateInternationalService()
         {
-            var InternationalId = Guid.Parse(Id.Coach.Ranking.Name());
-            var InternationalService = new InternationalService(internationalId);
+            
+            var InternationalService = new InternationalService();
             return InternationalService;
         }
     }
