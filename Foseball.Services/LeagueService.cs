@@ -27,5 +27,21 @@ namespace FoseBall.Model
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public IEnumerable<LeagueListItem> GetLeague()
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var search = ctx.Leagues.Select(e => new LeagueListItem
+                {
+                    LeagueId = e.LeagueId,
+                    Name = e.Name,
+                    Nation = e.Nation,
+                    NumberOfTeams = e.NumberOfTeams
+                });
+
+                return search.ToArray();
+            }
+        }
     }
 }
