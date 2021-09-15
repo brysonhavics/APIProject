@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InternationalModel.cs" />
+    <Compile Include="InternationalDetail.cs" />
     <Compile Include="InternationalCreate.cs" />
     <Compile Include="LeagueCreate.cs" />
     <Compile Include="LeagueDetail.cs" />

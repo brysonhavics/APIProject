@@ -34,11 +34,10 @@ namespace Foseball.Services
                 var entity =
                     ctx
                     .Internationals
-                    .Single(e => e.InternationalId == id && e.InternationalId == _interId);
+                    .Single(e => e.InternationalId == id);
                 return
                     new InternationalDetail
                     {
-                        GetInternationalById = entity.InternatioanlId,
                         Coach = entity.Coach,
                         Ranking = entity.Ranking,
                         Name = entity.Name,
