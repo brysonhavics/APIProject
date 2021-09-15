@@ -16,12 +16,16 @@ namespace FoseBall.WebAPI
             var InternationalService = new InternationalService();
             return InternationalService;
         }
+
+        [HttpGet]
         public IHttpActionResult Get()
         {
             InternationalService internationalService = CreateInternationalService();
             var international = internationalService.GetAllInternational();
             return Ok(international);
         }
+
+        [HttpPost]
         public IHttpActionResult Post(InternationalCreate international)
         {
             if (!ModelState.IsValid)
@@ -35,6 +39,7 @@ namespace FoseBall.WebAPI
             return Ok();
         }
 
+        [HttpPut]
         public IHttpActionResult Put(InternationalEdit international)
         {
             if (!ModelState.IsValid)
@@ -46,6 +51,8 @@ namespace FoseBall.WebAPI
                 return InternalServerError();
             return Ok();
         }
+
+        [HttpDelete]
         public IHttpActionResult Delete(int international)
         {
             var service = CreateInternationalService();
