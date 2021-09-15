@@ -70,7 +70,7 @@ namespace Foseball.Services
             }
         }
 
-        public bool DeleteNote(int leagueId)
+        public bool DeleteLeague(int leagueId)
         {
             using (var ctx = new FoseBallDbContext())
             {
