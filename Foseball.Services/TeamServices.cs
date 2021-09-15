@@ -14,7 +14,7 @@ namespace Foseball.Services
 
         public bool CreateTeam(TeamCreate model)
         {
-            var entity = new Team() { TeamName = model.TeamName, LeagueId = model.LeagueId, Rank = model.Rank, PowerRating=0};
+            var entity = new Team() { TeamName = model.TeamName, LeagueId = model.LeagueId, Rank = model.Rank, PowerRating = 0 };
 
             using (var ctx = new FoseBallDbContext())
             {
@@ -34,7 +34,8 @@ namespace Foseball.Services
                     {
                         TeamId = e.TeamId,
                         TeamName = e.TeamName,
-                        Rank = e.Rank
+                        Rank = e.Rank,
+                        PowerRanking = e.PowerRating,
                     }
                 );
                 return query.ToArray();
@@ -52,6 +53,7 @@ namespace Foseball.Services
                         TeamId = e.TeamId,
                         TeamName = e.TeamName,
                         Rank = e.Rank,
+                        PowerRanking = e.PowerRating,
                     }
                 );
 
@@ -70,6 +72,7 @@ namespace Foseball.Services
                         TeamId = e.TeamId,
                         TeamName = e.TeamName,
                         Rank = e.Rank,
+                        PowerRanking = e.PowerRating,
                     }
                 );
                 var ordered = query.OrderBy(e => e.Rank);

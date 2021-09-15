@@ -33,6 +33,7 @@ namespace Foseball.Services
             {
                 var searchy = ctx.Leagues.Select(e => new LeagueListItem
                 {
+                    LeagueId = e.LeagueId,
                     Name = e.Name,
                     Nation = e.Nation,
                     NumberOfTeams = e.NumberOfTeams

@@ -17,10 +17,13 @@ namespace FoseBall.Data
         [Required]
         public int Number { get; set; }
 
+        [Required]
         [Range(0,99)]
         public int Shooting { get; set; }
+        [Required]
         [Range(0,99)]
         public int Passing { get; set; }
+        [Required]
         [Range(0,99)]
         public int Defending { get; set; }
 

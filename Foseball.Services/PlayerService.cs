@@ -14,7 +14,7 @@ namespace Foseball.Services
 
         public bool CreatePlayer(PlayerCreate model)
         {
-            var entity = new Player() { Name = model.Name, Number = model.Number, InternationalId = model.InternationalId, Position = model.Position, TeamId = model.TeamId };
+            var entity = new Player() { Name = model.Name, Number = model.Number, InternationalId = model.InternationalId, Position = model.Position, TeamId = model.TeamId, Defending = model.Defending, Passing = model.Passing, Shooting = model.Shooting };
 
             using (var ctx = new FoseBallDbContext())
             {

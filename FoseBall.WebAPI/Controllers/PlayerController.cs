@@ -29,7 +29,7 @@ namespace FoseBall.WebAPI.Controllers
         public IHttpActionResult GetAllPlayers()
         {
             PlayerService playerService = CreatePlayerService();
-            var players = playerService
+            var players = playerService;
             return Ok(players);
         }
 
