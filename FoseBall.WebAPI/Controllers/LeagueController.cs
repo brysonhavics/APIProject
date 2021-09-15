@@ -51,5 +51,19 @@ namespace FoseBall.WebAPI.Controllers
                 };
             }
         }
+
+        public IHttpActionResult Put(LeagueEdit model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var that = CreateLeagueService();
+
+            if (!that.UpdateLeague(model))
+                return InternalServerError();
+
+            return Ok();
+
+        }
     }
 }
