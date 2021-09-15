@@ -12,13 +12,32 @@ namespace Foseball.Services
     {
         public InternationalService() { }
 
-        public bool CreateInternational(InternationalCreate model)
+        public IEnumerable<InternationalListItem> GetAllInternational()
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var entity =
+                    ctx
+                    .Internationals
+                    .Select(e => new InternationalListItem
+                    {
+
+                        Coach = e.Coach,
+                        Ranking = e.Ranking,
+                        Name = e.Name,
+                    });
+
+                return entity.ToArray();
+            }
+        }
+         public bool CreateInternational(InternationalCreate model)
         {
             var entity = new International()
             {
                 Coach = model.Coach,
                 Ranking = model.Ranking,
-                Name = model.Name, };
+                Name = model.Name,
+            };
 
             using (var ctx = new FoseBallDbContext())
             {
@@ -46,7 +65,7 @@ namespace Foseball.Services
         }
         public bool UpdateInternational(InternationalEdit model)
         {
-            using(var ctx = new FoseBallDbContext())
+            using (var ctx = new FoseBallDbContext())
             {
                 var entity =
                     ctx
@@ -61,7 +80,7 @@ namespace Foseball.Services
             }
 
         }
-        public bool DeleteInternational (int InternationalId)
+        public bool DeleteInternational(int InternationalId)
         {
             using (var ctx = new FoseBallDbContext())
             {
