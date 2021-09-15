@@ -40,6 +40,21 @@ namespace Foseball.Services
             }
         }
 
+        public IEnumerable<PlayerListItem> GetAllPlayers()
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var playerList = ctx.Players.Select(e => new PlayerListItem
+                {
+                    Name = e.Name,
+                    Number = e.Number,
+                    Position = e.Position,
+                    PlayerId = e.Id,
+                });
+                return playerList.ToArray();
+            }
+        }
+
         public IEnumerable<PlayerListItem> GetPlayersByTeam(int teamId)
         {
             using(var ctx = new FoseBallDbContext())
@@ -49,6 +64,7 @@ namespace Foseball.Services
                     Name = e.Name,
                     Number = e.Number,
                     Position = e.Position,
+                    PlayerId = e.Id,
                 });
                 return playerList.ToArray();
             }
@@ -63,6 +79,7 @@ namespace Foseball.Services
                     Name = e.Name,
                     Number = e.Number,
                     Position = e.Position,
+                    PlayerId = e.Id,
                 });
                 return playerList.ToArray();
             }
