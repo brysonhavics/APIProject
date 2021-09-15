@@ -14,7 +14,7 @@ namespace Foseball.Services
 
         public bool CreateTeam(TeamCreate model)
         {
-            var entity = new Team() { TeamName = model.TeamName, LeagueId = model.LeagueId, Rank = model.Rank};
+            var entity = new Team() { TeamName = model.TeamName, LeagueId = model.LeagueId, Rank = model.Rank, PowerRating=0};
 
             using (var ctx = new FoseBallDbContext())
             {

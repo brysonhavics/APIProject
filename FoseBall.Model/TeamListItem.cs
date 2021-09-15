@@ -13,5 +13,6 @@ namespace FoseBall.Model
         [Required]
         public string TeamName { get; set; }
         public int Rank { get; set; }
+        public int PowerRanking { get; set; }
     }
 }
