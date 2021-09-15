@@ -33,6 +33,20 @@ namespace FoseBall.WebAPI.Controllers
             return Ok(player);
         }
 
+        [HttpPut]
+        public IHttpActionResult EditPlayers(PlayerEdit player)
+        {
+            if (ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreatePlayerService();
+
+            if (!service.PlayerEdit(player))
+                return InternalServerError();
+
+            return Ok();
+        }
+
         private PlayerService CreatePlayerService()
         {
             var teamService = new PlayerService();

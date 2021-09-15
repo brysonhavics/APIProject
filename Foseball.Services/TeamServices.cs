@@ -54,6 +54,31 @@ namespace Foseball.Services
                 };
             }
         }
+
+        public bool UpdateTeam(TeamEdit model)
+        {
+            using(var ctx = new FoseBallDbContext())
+            {
+                var entity = ctx.Teams.Single(e => e.TeamId == model.TeamId);
+
+                entity.TeamName = model.TeamName;
+                entity.Rank = model.Rank;
+                entity.LeagueId = model.LeagueId;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteTeam(int teamId)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var entity = ctx.Teams.Single(e => e.TeamId == teamId);
+
+                ctx.Teams.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
 

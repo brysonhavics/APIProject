@@ -41,5 +41,19 @@ namespace Foseball.Services
                 return searchy.ToArray();
             }
         }
+
+        public bool UpdateLeague(LeagueEdit model)
+        {
+            using(var ctx = new FoseBallDbContext())
+            {
+                var thing = ctx.Leagues.Single(e => e.LeagueId == model.LeagueId);
+
+                thing.Name = model.Name;
+                thing.Nation = model.Nation;
+                thing.NumberOfTeams = model.NumberOfTeams;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
