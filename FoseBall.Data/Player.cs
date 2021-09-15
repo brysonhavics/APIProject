@@ -22,5 +22,8 @@ namespace FoseBall.Data
         public int InternationalId { get; set; }
         [Required]
         public string Position { get; set; }
+
+        public virtual Team Team { get; set; }
+        public virtual International International { get; set; }
     }
 }
