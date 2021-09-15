@@ -47,5 +47,37 @@ namespace FoseBall.WebAPI.Controllers
             return Ok(team);
         }
 
+        [HttpGet]
+        [Route("api/Team/League/{id}")]
+        public IHttpActionResult GetTeamsInLeague(int id)
+        {
+            TeamServices teamService = CreateTeamService();
+            var teams = teamService.GetTeamsByLeagueId(id);
+            return Ok(teams);
+        }
+
+        public IHttpActionResult Put(TeamEdit team)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var service = CreateTeamService();
+
+            if (!service.UpdateTeam(team))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateTeamService();
+            if (!service.DeleteTeam(id))
+                return InternalServerError();
+
+            return Ok();
+        }
     }
 }

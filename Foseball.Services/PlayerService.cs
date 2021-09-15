@@ -14,7 +14,7 @@ namespace Foseball.Services
 
         public bool CreatePlayer(PlayerCreate model)
         {
-            var entity = new Player() { Name = model.Name, Number = model.Number, NationalityId = model.InternationalId, Position = model.Position, TeamId = model.TeamId };
+            var entity = new Player() { Name = model.Name, Number = model.Number, InternationalId = model.InternationalId, Position = model.Position, TeamId = model.TeamId };
 
             using (var ctx = new FoseBallDbContext())
             {
@@ -34,9 +34,37 @@ namespace Foseball.Services
                     Name = entity.Name,
                     Number = entity.Number,
                     Position = entity.Position,
-                    TeamId = entity.TeamId,
-                    NationalityId = entity.NationalityId,
+                    TeamName = entity.Team.TeamName,
+                    InternationalTeam = entity.International.Name
                 };
+            }
+        }
+
+        public bool PlayerEdit(PlayerEdit player)
+        {
+            using(var ctx = new FoseBallDbContext())
+            {
+                var entity = ctx.Players.Single(e => e.Id == player.PlayerId);
+
+                entity.Name = player.Name;
+                entity.Number = player.Number;
+                entity.Position = player.Position;
+                entity.TeamId = player.TeamId;
+                entity.InternationalId = player.NationalityId;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteNote(int playerId)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var entity = ctx.Players.Single(e => e.Id == playerId);
+
+                ctx.Players.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
