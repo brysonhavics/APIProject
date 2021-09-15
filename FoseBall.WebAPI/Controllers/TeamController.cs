@@ -56,6 +56,15 @@ namespace FoseBall.WebAPI.Controllers
             return Ok(teams);
         }
 
+        [HttpGet]
+        [Route("api/Team/League/Sorted/{id}")]
+        public IHttpActionResult GetTeamsInLeagueSorted(int id)
+        {
+            TeamServices teamService = CreateTeamService();
+            var teams = teamService.GetTeamsByLeagueRankSort(id);
+            return Ok(teams);
+        }
+
         public IHttpActionResult Put(TeamEdit team)
         {
             if (!ModelState.IsValid)
