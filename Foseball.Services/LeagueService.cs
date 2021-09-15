@@ -42,6 +42,20 @@ namespace Foseball.Services
             }
         }
 
+        public LeagueDetail GetLeagueByID(int id)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var entity = ctx.Leagues.Single(e => e.LeagueId == id);
+                return new LeagueDetail
+                {
+                    Name = entity.Name,
+                    NumberOfTeams = entity.NumberOfTeams,
+                    Nation = entity.Nation
+                };
+            }
+        }
+
         public bool UpdateLeague(LeagueEdit model)
         {
             using(var ctx = new FoseBallDbContext())
@@ -51,6 +65,18 @@ namespace Foseball.Services
                 thing.Name = model.Name;
                 thing.Nation = model.Nation;
                 thing.NumberOfTeams = model.NumberOfTeams;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteNote(int leagueId)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var entity = ctx.Leagues.Single(e => e.LeagueId == leagueId);
+
+                ctx.Leagues.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

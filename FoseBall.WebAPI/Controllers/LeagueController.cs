@@ -38,19 +38,6 @@ namespace FoseBall.WebAPI.Controllers
             return Ok();
         }
 
-        public LeagueDetail GetLeagueByID(int id)
-        {
-            using (var ctx = new FoseBallDbContext())
-            {
-                var entity = ctx.Leagues.Single(e => e.LeagueId == id);
-                return new LeagueDetail
-                {
-                    Name = entity.Name,
-                    NumberOfTeams = entity.NumberOfTeams,
-                    Nation = entity.Nation
-                };
-            }
-        }
 
         public IHttpActionResult Put(LeagueEdit model)
         {
@@ -64,6 +51,16 @@ namespace FoseBall.WebAPI.Controllers
 
             return Ok();
 
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateLeagueService();
+
+            if (!service.DeleteNote(id))
+                return InternalServerError();
+
+            return Ok();
         }
     }
 }
