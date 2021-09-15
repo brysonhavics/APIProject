@@ -51,8 +51,7 @@ namespace Foseball.Services
                 var entity =
                     ctx
                     .Internationals
-                    .Single(e => e.InternationalId == id);
-                entity.InternationId = model.InternationalId;
+                    .Single(e => e.InternationalId == model.InternationalId);
                 entity.Coach = model.Coach;
                 entity.Ranking = model.Ranking;
                 entity.Name = model.Name;
