@@ -5,7 +5,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Foseball.Services;
-using FoseBall.Data;
 using FoseBall.Model;
 
 namespace FoseBall.WebAPI.Controllers
