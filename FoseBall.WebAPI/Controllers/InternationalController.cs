@@ -1,4 +1,5 @@
 ﻿using Foseball.Services;
+using FoseBall.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,20 @@ namespace FoseBall.WebAPI
             var InternationalService = new InternationalService();
             return InternationalService;
         }
+        public IHttpActionResult Post(InternationalCreate international)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateInternationalService();
+
+            if (!service.CreateInternational(international))
+                return InternalServerError();
+
+            return Ok();
+        }
+        
+        
     }
     
 }
