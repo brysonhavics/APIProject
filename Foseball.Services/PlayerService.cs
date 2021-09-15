@@ -14,7 +14,7 @@ namespace Foseball.Services
 
         public bool CreatePlayer(PlayerCreate model)
         {
-            var entity = new Player() { Name = model.Name, Number = model.Number, NationalityId = model.InternationalId, Position = model.Position, TeamId = model.TeamId };
+            var entity = new Player() { Name = model.Name, Number = model.Number, InternationalId = model.InternationalId, Position = model.Position, TeamId = model.TeamId };
 
             using (var ctx = new FoseBallDbContext())
             {
@@ -34,8 +34,8 @@ namespace Foseball.Services
                     Name = entity.Name,
                     Number = entity.Number,
                     Position = entity.Position,
-                    TeamName = entity.
-                    NationalityId = entity.NationalityId,
+                    TeamName = entity.Team.TeamName,
+                    InternationalTeam = entity.International.Name
                 };
             }
         }
@@ -50,7 +50,7 @@ namespace Foseball.Services
                 entity.Number = player.Number;
                 entity.Position = player.Position;
                 entity.TeamId = player.TeamId;
-                entity.NationalityId = player.NationalityId;
+                entity.InternationalId = player.NationalityId;
 
                 return ctx.SaveChanges() == 1;
             }
