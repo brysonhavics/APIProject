@@ -59,6 +59,21 @@ namespace Foseball.Services
                 return ctx.SaveChanges() == 1;
 
             }
+
+        }
+        public bool DeleteInternational (int InternationalId)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var entity =
+                    ctx
+                    .Internationals
+                    .Single(e => e.InternationalId == InternationalId);
+
+                ctx.Internationals.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
         }
     }
 }

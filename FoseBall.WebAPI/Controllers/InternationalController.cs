@@ -40,6 +40,15 @@ namespace FoseBall.WebAPI
                 return InternalServerError();
             return Ok();
         }
+        public IHttpActionResult Delete(int international)
+        {
+            var service = CreateInternationalService();
+
+            if (!service.DeleteInternational(international))
+                return InternalServerError();
+
+            return Ok();
+        }
         
         
     }
