@@ -41,6 +41,24 @@ namespace Foseball.Services
             }
         }
 
+        public IEnumerable<TeamListItem> GetTeamsByLeagueId(int id)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var query = ctx.Teams.Where(
+                    e => e.LeagueId == id
+                    ).Select(e => new TeamListItem
+                    {
+                        TeamId = e.TeamId,
+                        TeamName = e.TeamName,
+                        Rank = e.Rank,
+                    }
+                );
+
+                return query.ToArray();
+            }
+        }
+
         public TeamShow GetTeamById(int id)
         {
             using(var ctx = new FoseBallDbContext())
