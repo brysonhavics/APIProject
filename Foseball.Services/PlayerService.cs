@@ -39,5 +39,21 @@ namespace Foseball.Services
                 };
             }
         }
+
+        public bool PlayerEdit(PlayerEdit player)
+        {
+            using(var ctx = new FoseBallDbContext())
+            {
+                var entity = ctx.Players.Single(e => e.Id == player.PlayerId);
+
+                entity.Name = player.Name;
+                entity.Number = player.Number;
+                entity.Position = player.Position;
+                entity.TeamId = player.TeamId;
+                entity.NationalityId = player.NationalityId;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
