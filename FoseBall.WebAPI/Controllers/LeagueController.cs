@@ -63,7 +63,7 @@ namespace FoseBall.WebAPI.Controllers
         {
             var service = CreateLeagueService();
 
-            if (!service.DeleteNote(id))
+            if (!service.DeleteLeague(id))
                 return InternalServerError();
 
             return Ok();
