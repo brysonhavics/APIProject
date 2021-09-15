@@ -34,7 +34,7 @@ namespace Foseball.Services
                     Name = entity.Name,
                     Number = entity.Number,
                     Position = entity.Position,
-                    TeamId = entity.TeamId,
+                    TeamName = entity.,
                     NationalityId = entity.NationalityId,
                 };
             }
