@@ -31,6 +31,13 @@ namespace FoseBall.WebAPI.Controllers
             return Ok(league);
         }
 
+        public IHttpActionResult Get(string nation)
+        {
+            LeagueService leagueService = CreateLeagueService();
+            var league = leagueService.GetLeagueByNation(nation);
+            return Ok(league);
+        }
+
         public IHttpActionResult Post(LeagueCreate model)
         {
             if (!ModelState.IsValid)
