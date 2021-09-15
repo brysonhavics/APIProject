@@ -59,12 +59,12 @@ namespace Foseball.Services
             }
         }
 
-        public TeamShow GetTeamById(int id)
+        public TeamDetail GetTeamById(int id)
         {
             using(var ctx = new FoseBallDbContext())
             {
                 var entity = ctx.Teams.Single(e => e.TeamId == id);
-                return new TeamShow
+                return new TeamDetail
                 {
                     TeamName = entity.TeamName,
                     LeagueId = entity.LeagueId,

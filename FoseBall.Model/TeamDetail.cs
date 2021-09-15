@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FoseBall.Model
 {
-    public class TeamShow
+    public class TeamDetail
     {
         [Required]
         public string TeamName { get; set; }
