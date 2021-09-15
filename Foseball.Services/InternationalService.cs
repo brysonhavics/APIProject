@@ -25,6 +25,25 @@ namespace Foseball.Services
                 ctx.Internationals.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
+
+        }
+        public InternationalDetail GetInternationalById(int id)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var entity =
+                    ctx
+                    .Internationals
+                    .Single(e => e.InternationalId == id && e.InternationalId == _interId);
+                return
+                    new InternationalDetail
+                    {
+                        GetInternationalById = entity.InternatioanlId,
+                        Coach = entity.Coach,
+                        Ranking = entity.Ranking,
+                        Name = entity.Name,
+                    };
+            }
         }
     }
 }
