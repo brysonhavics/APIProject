@@ -47,6 +47,16 @@ namespace FoseBall.WebAPI.Controllers
             return Ok();
         }
 
+        [HttpDelete]
+        public IHttpActionResult DeletePlayer(int id)
+        {
+            var service = CreatePlayerService();
+            if (!service.DeleteNote(id))
+                return InternalServerError();
+
+            return Ok();
+        }
+
         private PlayerService CreatePlayerService()
         {
             var teamService = new PlayerService();

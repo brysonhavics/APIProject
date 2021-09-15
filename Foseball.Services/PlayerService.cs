@@ -55,5 +55,17 @@ namespace Foseball.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteNote(int playerId)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var entity = ctx.Players.Single(e => e.Id == playerId);
+
+                ctx.Players.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
