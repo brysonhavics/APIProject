@@ -44,5 +44,36 @@ namespace Foseball.Services
                     };
             }
         }
+        public bool UpdateInternational(InternationalEdit model)
+        {
+            using(var ctx = new FoseBallDbContext())
+            {
+                var entity =
+                    ctx
+                    .Internationals
+                    .Single(e => e.InternationalId == model.InternationalId);
+                entity.Coach = model.Coach;
+                entity.Ranking = model.Ranking;
+                entity.Name = model.Name;
+
+                return ctx.SaveChanges() == 1;
+
+            }
+
+        }
+        public bool DeleteInternational (int InternationalId)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var entity =
+                    ctx
+                    .Internationals
+                    .Single(e => e.InternationalId == InternationalId);
+
+                ctx.Internationals.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

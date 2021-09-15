@@ -24,6 +24,20 @@ namespace FoseBall.WebAPI.Controllers
             return Ok(leagues);
         }
 
+        public IHttpActionResult Get(int id)
+        {
+            LeagueService leagueService = CreateLeagueService();
+            var league = leagueService.GetLeagueByID(id);
+            return Ok(league);
+        }
+
+        public IHttpActionResult Get(string nation)
+        {
+            LeagueService leagueService = CreateLeagueService();
+            var league = leagueService.GetLeagueByNation(nation);
+            return Ok(league);
+        }
+
         public IHttpActionResult Post(LeagueCreate model)
         {
             if (!ModelState.IsValid)
@@ -56,7 +70,7 @@ namespace FoseBall.WebAPI.Controllers
         {
             var service = CreateLeagueService();
 
-            if (!service.DeleteNote(id))
+            if (!service.DeleteLeague(id))
                 return InternalServerError();
 
             return Ok();

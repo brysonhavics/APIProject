@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="InternationalDetail.cs" />
     <Compile Include="InternationalCreate.cs" />
+    <Compile Include="InternationalEdit.cs" />
     <Compile Include="LeagueCreate.cs" />
     <Compile Include="LeagueDetail.cs" />
     <Compile Include="LeagueEdit.cs" />
@@ -66,7 +67,7 @@
     <Compile Include="TeamCreate.cs" />
     <Compile Include="TeamEdit.cs" />
     <Compile Include="TeamListItem.cs" />
-    <Compile Include="TeamShow.cs" />
+    <Compile Include="TeamDetail.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
