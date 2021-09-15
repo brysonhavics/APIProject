@@ -163,6 +163,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LeagueController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Controllers\PlayerController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -255,6 +258,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FoseBall.Data\FoseBall.Data.csproj">
+      <Project>{94350717-E151-4193-922C-262E873048F7}</Project>
+      <Name>FoseBall.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FoseBall.Model\FoseBall.Model.csproj">
       <Project>{3630CF4E-C6CA-4FF0-8C8C-DE74AE444A30}</Project>
       <Name>FoseBall.Model</Name>

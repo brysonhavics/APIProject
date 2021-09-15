@@ -33,13 +33,26 @@ namespace Foseball.Services
             {
                 var searchy = ctx.Leagues.Select(e => new LeagueListItem
                 {
-                    LeagueId = e.LeagueId,
                     Name = e.Name,
                     Nation = e.Nation,
                     NumberOfTeams = e.NumberOfTeams
                 });
 
                 return searchy.ToArray();
+            }
+        }
+
+        public bool UpdateLeague(LeagueEdit model)
+        {
+            using(var ctx = new FoseBallDbContext())
+            {
+                var thing = ctx.Leagues.Single(e => e.LeagueId == model.LeagueId);
+
+                thing.Name = model.Name;
+                thing.Nation = model.Nation;
+                thing.NumberOfTeams = model.NumberOfTeams;
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

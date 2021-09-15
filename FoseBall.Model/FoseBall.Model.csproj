@@ -55,11 +55,16 @@
     <Compile Include="InternationalModel.cs" />
     <Compile Include="InternationalCreate.cs" />
     <Compile Include="LeagueCreate.cs" />
+    <Compile Include="LeagueDetail.cs" />
+    <Compile Include="LeagueEdit.cs" />
     <Compile Include="LeagueListItem.cs" />
     <Compile Include="PlayerCreate.cs" />
+    <Compile Include="PlayerDetail.cs" />
+    <Compile Include="PlayerListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TeamCreate.cs" />
     <Compile Include="TeamListItem.cs" />
+    <Compile Include="TeamShow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
