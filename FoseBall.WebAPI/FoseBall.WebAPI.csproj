@@ -258,10 +258,6 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FoseBall.Data\FoseBall.Data.csproj">
-      <Project>{94350717-E151-4193-922C-262E873048F7}</Project>
-      <Name>FoseBall.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FoseBall.Model\FoseBall.Model.csproj">
       <Project>{3630CF4E-C6CA-4FF0-8C8C-DE74AE444A30}</Project>
       <Name>FoseBall.Model</Name>
