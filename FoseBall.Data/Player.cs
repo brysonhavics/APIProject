@@ -16,10 +16,30 @@ namespace FoseBall.Data
         public string Name { get; set; }
         [Required]
         public int Number { get; set; }
+
+        [Range(0,99)]
+        public int Shooting { get; set; }
+        [Range(0,99)]
+        public int Passing { get; set; }
+        [Range(0,99)]
+        public int Defending { get; set; }
+
+        [Display(Name = "Overall Score")]
+        public int OverallScore
+        {
+
+            get
+            {
+                return (Shooting + Passing + Defending) / 3;
+            }
+        }
+
         [ForeignKey(nameof(Team))]
         public int TeamId { get; set; }
+
         [ForeignKey(nameof(International))]
         public int InternationalId { get; set; }
+
         [Required]
         public string Position { get; set; }
 
