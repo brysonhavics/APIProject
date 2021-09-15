@@ -17,6 +17,14 @@ namespace FoseBall.WebAPI
             return InternationalService;
         }
 
+        [HttpGet]
+        public IHttpActionResult Get()
+        {
+            InternationalService internationalService = CreateInternationalService();
+            var international = internationalService.GetAllInternational();
+            return Ok(international);
+        }
+
         [HttpPost]
         public IHttpActionResult Post(InternationalCreate international)
         {
