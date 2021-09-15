@@ -24,6 +24,13 @@ namespace FoseBall.WebAPI.Controllers
             return Ok(leagues);
         }
 
+        public IHttpActionResult Get(int id)
+        {
+            LeagueService leagueService = CreateLeagueService();
+            var league = leagueService.GetLeagueByID(id);
+            return Ok(league);
+        }
+
         public IHttpActionResult Post(LeagueCreate model)
         {
             if (!ModelState.IsValid)
