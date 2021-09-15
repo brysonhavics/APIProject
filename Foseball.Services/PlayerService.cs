@@ -44,7 +44,21 @@ namespace Foseball.Services
         {
             using(var ctx = new FoseBallDbContext())
             {
-                var playerList = ctx.Players.Select(e => new PlayerListItem
+                var playerList = ctx.Players.Where(p => p.Id == teamId).Select(e => new PlayerListItem
+                {
+                    Name = e.Name,
+                    Number = e.Number,
+                    Position = e.Position,
+                });
+                return playerList.ToArray();
+            }
+        }
+
+        public IEnumerable<PlayerListItem> GetPlayersByPostition(string position)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var playerList = ctx.Players.Where(p => p.Position == position).Select(e => new PlayerListItem
                 {
                     Name = e.Name,
                     Number = e.Number,
