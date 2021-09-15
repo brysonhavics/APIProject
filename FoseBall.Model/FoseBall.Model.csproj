@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="InternationalDetail.cs" />
     <Compile Include="InternationalCreate.cs" />
+    <Compile Include="InternationalEdit.cs" />
     <Compile Include="LeagueCreate.cs" />
     <Compile Include="LeagueDetail.cs" />
     <Compile Include="LeagueEdit.cs" />

@@ -28,6 +28,18 @@ namespace FoseBall.WebAPI
 
             return Ok();
         }
+
+        public IHttpActionResult Put(InternationalEdit international)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateInternationalService();
+
+            if (!service.UpdateInternational(international))
+                return InternalServerError();
+            return Ok();
+        }
         
         
     }
