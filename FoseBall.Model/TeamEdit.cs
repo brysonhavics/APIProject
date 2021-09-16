@@ -8,7 +8,6 @@ namespace FoseBall.Model
 {
     public class TeamEdit
     {
-        public int TeamId { get; set; }
         public string TeamName { get; set; }
         public int Rank { get; set; }
         public int LeagueId { get; set; }
