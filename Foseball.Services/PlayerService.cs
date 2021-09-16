@@ -19,6 +19,9 @@ namespace Foseball.Services
             using (var ctx = new FoseBallDbContext())
             {
                 ctx.Players.Add(entity);
+                Team team = ctx.Teams.Single(e => e.TeamId == model.TeamId);
+                team.PowerRating += entity.OverallScore;
+                team.Roster++;
                 return ctx.SaveChanges() == 1;
             }
         }

@@ -35,7 +35,8 @@ namespace Foseball.Services
                         TeamId = e.TeamId,
                         TeamName = e.TeamName,
                         Rank = e.Rank,
-                        PowerRanking = e.PowerRating,
+                        Roster = e.Roster,
+                        PowerRating = e.PowerRating/e.Roster,
                     }
                 );
                 return query.ToArray();
@@ -53,7 +54,8 @@ namespace Foseball.Services
                         TeamId = e.TeamId,
                         TeamName = e.TeamName,
                         Rank = e.Rank,
-                        PowerRanking = e.PowerRating,
+                        Roster = e.Roster,
+                        PowerRating = e.PowerRating/e.Roster,
                     }
                 );
 
@@ -72,7 +74,8 @@ namespace Foseball.Services
                         TeamId = e.TeamId,
                         TeamName = e.TeamName,
                         Rank = e.Rank,
-                        PowerRanking = e.PowerRating,
+                        Roster = e.Roster,
+                        PowerRating = e.PowerRating/e.Roster,
                     }
                 );
                 var ordered = query.OrderBy(e => e.Rank);
@@ -90,6 +93,8 @@ namespace Foseball.Services
                     TeamName = entity.TeamName,
                     LeagueId = entity.LeagueId,
                     Rank = entity.Rank,
+                    Roster = entity.Roster,
+                    PowerRanking = entity.PowerRating/entity.Roster,
                 };
             }
         }
@@ -118,6 +123,7 @@ namespace Foseball.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
     }
 }
 
