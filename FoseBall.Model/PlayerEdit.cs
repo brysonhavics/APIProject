@@ -12,7 +12,7 @@ namespace FoseBall.Model
         public string Name { get; set; }
         public int Number { get; set; }
         public int TeamId { get; set; }
-        public int NationalityId { get; set; }
+        public int InternationalId { get; set; }
         public string Position { get; set; }
     }
 }
