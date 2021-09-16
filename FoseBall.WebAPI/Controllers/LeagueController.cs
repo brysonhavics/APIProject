@@ -17,6 +17,7 @@ namespace FoseBall.WebAPI.Controllers
             return leagueService;
         }
 
+        [HttpGet]
         public IHttpActionResult Get()
         {
             LeagueService leagueService = CreateLeagueService();
@@ -24,6 +25,8 @@ namespace FoseBall.WebAPI.Controllers
             return Ok(leagues);
         }
 
+        [HttpGet]
+        [Route("api/League/{id}")]
         public IHttpActionResult Get(int id)
         {
             LeagueService leagueService = CreateLeagueService();
@@ -31,6 +34,8 @@ namespace FoseBall.WebAPI.Controllers
             return Ok(league);
         }
 
+        [HttpGet]
+        [Route("api/League/{nation}")]
         public IHttpActionResult Get(string nation)
         {
             LeagueService leagueService = CreateLeagueService();
@@ -38,6 +43,7 @@ namespace FoseBall.WebAPI.Controllers
             return Ok(league);
         }
 
+        [HttpPost]
         public IHttpActionResult Post(LeagueCreate model)
         {
             if (!ModelState.IsValid)
@@ -51,7 +57,7 @@ namespace FoseBall.WebAPI.Controllers
             return Ok();
         }
 
-
+        [HttpPut]
         public IHttpActionResult Put(LeagueEdit model)
         {
             if (!ModelState.IsValid)
@@ -66,6 +72,7 @@ namespace FoseBall.WebAPI.Controllers
 
         }
 
+        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
             var service = CreateLeagueService();
