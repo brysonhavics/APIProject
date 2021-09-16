@@ -8,7 +8,7 @@ namespace FoseBall.Model
 {
    public class InternationalDetail
     {
-        public string InternationalId { get; set; }
+        public int InternationalId { get; set; }
         public string Coach { get; set; }
         public int Ranking  { get; set; }
         public string Name { get; set; } 
