@@ -81,6 +81,8 @@ namespace FoseBall.WebAPI.Controllers
             return Ok();
         }
 
+        [HttpDelete]
+        [Route("api/Team/Delete/{id}")]
         public IHttpActionResult Delete(int id)
         {
             var service = CreateTeamService();
