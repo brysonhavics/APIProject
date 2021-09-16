@@ -21,7 +21,7 @@ namespace Foseball.Services
                     .Internationals
                     .Select(e => new InternationalListItem
                     {
-
+                        InternationalId = e.InternationalId,
                         Coach = e.Coach,
                         Ranking = e.Ranking,
                         Name = e.Name,
@@ -58,6 +58,7 @@ namespace Foseball.Services
                     new InternationalDetail
                     {
                         Coach = entity.Coach,
+                        InternationalId = entity.InternationalId,
                         Ranking = entity.Ranking,
                         Name = entity.Name,
                     };
