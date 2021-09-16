@@ -53,6 +53,7 @@ namespace FoseBall.WebAPI.Controllers
 
 
         [HttpGet]
+        [Route("api/Player/Position/{position}")]
         public IHttpActionResult GetPlayersByPosition(string position)
         {
             PlayerService playerService = CreatePlayerService();
