@@ -95,7 +95,7 @@ namespace Foseball.Services
                 entity.Number = player.Number;
                 entity.Position = player.Position;
                 entity.TeamId = player.TeamId;
-                entity.InternationalId = player.NationalityId;
+                entity.InternationalId = player.InternationalId;
 
                 return ctx.SaveChanges() == 1;
             }

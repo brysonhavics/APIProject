@@ -29,7 +29,7 @@ namespace FoseBall.WebAPI.Controllers
         public IHttpActionResult GetAllPlayers()
         {
             PlayerService playerService = CreatePlayerService();
-            var players = playerService;
+            var players = playerService.GetAllPlayers();
             return Ok(players);
         }
 
@@ -53,6 +53,7 @@ namespace FoseBall.WebAPI.Controllers
 
 
         [HttpGet]
+        [Route("api/Player/Position/{position}")]
         public IHttpActionResult GetPlayersByPosition(string position)
         {
             PlayerService playerService = CreatePlayerService();
@@ -63,7 +64,7 @@ namespace FoseBall.WebAPI.Controllers
         [HttpPut]
         public IHttpActionResult EditPlayers(PlayerEdit player)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var service = CreatePlayerService();
@@ -75,6 +76,7 @@ namespace FoseBall.WebAPI.Controllers
         }
 
         [HttpDelete]
+        [Route("api/Player/{id}")]
         public IHttpActionResult DeletePlayer(int id)
         {
             var service = CreatePlayerService();
