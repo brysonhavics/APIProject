@@ -26,7 +26,7 @@ namespace FoseBall.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("api/League/{id}")]
+        [Route("api/League/Id/{id}")]
         public IHttpActionResult Get(int id)
         {
             LeagueService leagueService = CreateLeagueService();
@@ -35,7 +35,7 @@ namespace FoseBall.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("api/League/{nation}")]
+        [Route("api/League/Nation/{nation}")]
         public IHttpActionResult Get(string nation)
         {
             LeagueService leagueService = CreateLeagueService();
@@ -73,7 +73,7 @@ namespace FoseBall.WebAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("api/Delete/{id}")]
+        [Route("api/League/{id}")]
         public IHttpActionResult Delete(int id)
         {
             var service = CreateLeagueService();
