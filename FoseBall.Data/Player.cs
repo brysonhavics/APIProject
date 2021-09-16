@@ -28,14 +28,7 @@ namespace FoseBall.Data
         public int Defending { get; set; }
 
         [Display(Name = "Overall Score")]
-        public int OverallScore
-        {
-
-            get
-            {
-                return (Shooting + Passing + Defending) / 3;
-            }
-        }
+        public int OverallScore { get; set; }
 
         [ForeignKey(nameof(Team))]
         public int TeamId { get; set; }

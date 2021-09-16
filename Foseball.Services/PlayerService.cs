@@ -14,7 +14,7 @@ namespace Foseball.Services
 
         public bool CreatePlayer(PlayerCreate model)
         {
-            var entity = new Player() { Name = model.Name, Number = model.Number, InternationalId = model.InternationalId, Position = model.Position, TeamId = model.TeamId, Defending = model.Defending, Passing = model.Passing, Shooting = model.Shooting };
+            var entity = new Player() { Name = model.Name, Number = model.Number, InternationalId = model.InternationalId, Position = model.Position, TeamId = model.TeamId, Defending = model.Defending, Passing = model.Passing, Shooting = model.Shooting, OverallScore = ((model.Defending+model.Passing+model.Shooting)/3) };
 
             using (var ctx = new FoseBallDbContext())
             {
@@ -35,7 +35,11 @@ namespace Foseball.Services
                     Number = entity.Number,
                     Position = entity.Position,
                     TeamName = entity.Team.TeamName,
-                    InternationalTeam = entity.International.Name
+                    InternationalTeam = entity.International.Name,
+                    Passing = entity.Passing,
+                    Shooting = entity.Shooting,
+                    Defending = entity.Defending,
+                    OverallScore = entity.OverallScore,
                 };
             }
         }
@@ -50,6 +54,7 @@ namespace Foseball.Services
                     Number = e.Number,
                     Position = e.Position,
                     PlayerId = e.Id,
+                    OverallScore = e.OverallScore,
                 });
                 return playerList.ToArray();
             }

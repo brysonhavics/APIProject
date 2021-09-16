@@ -12,5 +12,6 @@ namespace FoseBall.Model
         public int Number { get; set; }
         public string Position { get; set; }
         public int PlayerId { get; set; }
+        public int OverallScore { get; set; }
     }
 }
