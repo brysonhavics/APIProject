@@ -21,7 +21,7 @@ namespace Foseball.Services
                     .Internationals
                     .Select(e => new InternationalListItem
                     {
-
+                        InternationalId = e.InternationalId,
                         Coach = e.Coach,
                         Ranking = e.Ranking,
                         Name = e.Name,
