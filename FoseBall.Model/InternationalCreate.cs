@@ -10,7 +10,7 @@ namespace FoseBall.Model
     public class InternationalCreate
     {
         [Required]
-        public int InternationalId { get; set; }
+       
         public string Coach { get; set; }
         public int Ranking { get; set; }
         [Required]
