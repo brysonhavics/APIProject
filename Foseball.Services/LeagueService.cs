@@ -50,6 +50,7 @@ namespace Foseball.Services
                 var entity = ctx.Leagues.Single(e => e.LeagueId == id);
                 return new LeagueDetail
                 {
+                    LeagueId = entity.LeagueId,
                     Name = entity.Name,
                     NumberOfTeams = entity.NumberOfTeams,
                     Nation = entity.Nation
@@ -64,6 +65,7 @@ namespace Foseball.Services
                 var entity = ctx.Leagues.Single(e => e.Nation == nation);
                 return new LeagueDetail
                 {
+                    LeagueId = entity.LeagueId,
                     Name = entity.Name,
                     NumberOfTeams= entity.NumberOfTeams,
                     Nation = entity.Nation
