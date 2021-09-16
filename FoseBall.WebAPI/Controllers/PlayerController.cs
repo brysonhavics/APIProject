@@ -64,7 +64,7 @@ namespace FoseBall.WebAPI.Controllers
         [HttpPut]
         public IHttpActionResult EditPlayers(PlayerEdit player)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var service = CreatePlayerService();
@@ -76,6 +76,7 @@ namespace FoseBall.WebAPI.Controllers
         }
 
         [HttpDelete]
+        [Route("api/Player/{id}")]
         public IHttpActionResult DeletePlayer(int id)
         {
             var service = CreatePlayerService();
