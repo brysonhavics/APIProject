@@ -80,7 +80,7 @@ namespace FoseBall.WebAPI.Controllers
         public IHttpActionResult DeletePlayer(int id)
         {
             var service = CreatePlayerService();
-            if (!service.DeleteNote(id))
+            if (!service.DeletePlayer(id))
                 return InternalServerError();
 
             return Ok();

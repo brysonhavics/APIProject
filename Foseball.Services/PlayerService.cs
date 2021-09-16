@@ -101,7 +101,7 @@ namespace Foseball.Services
             }
         }
 
-        public bool DeleteNote(int playerId)
+        public bool DeletePlayer(int playerId)
         {
             using (var ctx = new FoseBallDbContext())
             {
