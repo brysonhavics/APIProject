@@ -58,6 +58,7 @@ namespace Foseball.Services
                     new InternationalDetail
                     {
                         Coach = entity.Coach,
+                        InternationalId = entity.InternationalId,
                         Ranking = entity.Ranking,
                         Name = entity.Name,
                     };
