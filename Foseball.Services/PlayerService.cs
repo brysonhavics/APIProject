@@ -59,7 +59,7 @@ namespace Foseball.Services
         {
             using(var ctx = new FoseBallDbContext())
             {
-                var playerList = ctx.Players.Where(p => p.Id == teamId).Select(e => new PlayerListItem
+                var playerList = ctx.Players.Where(p => p.TeamId == teamId).Select(e => new PlayerListItem
                 {
                     Name = e.Name,
                     Number = e.Number,
