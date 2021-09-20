@@ -1,4 +1,5 @@
 ﻿using Foseball.Services;
+using FoseBall.Data;
 using FoseBall.Model;
 using System;
 using System.Collections.Generic;
@@ -54,7 +55,7 @@ namespace FoseBall.WebAPI.Controllers
 
         [HttpGet]
         [Route("api/Player/Position/{position}")]
-        public IHttpActionResult GetPlayersByPosition(string position)
+        public IHttpActionResult GetPlayersByPosition(int position)
         {
             PlayerService playerService = CreatePlayerService();
             var players = playerService.GetPlayersByPostition(position);
