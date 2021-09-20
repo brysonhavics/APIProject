@@ -22,7 +22,7 @@ namespace Foseball.Services
                 Team team = ctx.Teams.Single(e => e.TeamId == model.TeamId);
                 team.PowerRating += entity.OverallScore;
                 team.Roster++;
-                return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges() == 2;
             }
         }
 
