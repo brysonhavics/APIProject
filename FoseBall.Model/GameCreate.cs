@@ -1,22 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FoseBall.Data
+namespace FoseBall.Model
 {
-   public class Games
+    public class GameCreate
     {
-        [Key]
-        public int GameId { get; set; }
-        [Required]
         public int HomeId { get; set; }
-        [Required]
         public int AwayId { get; set; }
-        public string Result { get; set; }
-        [Required]
         public string Referee { get; set; }
     }
 }

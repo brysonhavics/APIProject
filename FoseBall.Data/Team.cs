@@ -22,6 +22,6 @@ namespace FoseBall.Data
         public virtual List<Player> Players { get; set; } = new List<Player>();
         public int Wins { get; set; }
         public int Losses { get; set; }
-        public int draw { get; set; }
+        public int Draws { get; set; }
     }
 }
