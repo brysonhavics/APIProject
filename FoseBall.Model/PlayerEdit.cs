@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoseBall.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace FoseBall.Model
         public string Name { get; set; }
         public int Number { get; set; }
         public int TeamId { get; set; }
-        public int NationalityId { get; set; }
-        public string Position { get; set; }
+        public int InternationalId { get; set; }
+        public Position Position { get; set; }
     }
 }

@@ -14,14 +14,18 @@ namespace Foseball.Services
 
         public bool CreatePlayer(PlayerCreate model)
         {
-            var entity = new Player() { Name = model.Name, Number = model.Number, InternationalId = model.InternationalId, Position = model.Position, TeamId = model.TeamId };
+            var entity = new Player() { Name = model.Name, Number = model.Number, InternationalId = model.InternationalId, Position = (Position)model.Position, TeamId = model.TeamId, Defending = model.Defending, Passing = model.Passing, Shooting = model.Shooting, OverallScore = ((model.Defending+model.Passing+model.Shooting)/3) };
 
             using (var ctx = new FoseBallDbContext())
             {
                 ctx.Players.Add(entity);
+                Team team = ctx.Teams.Single(e => e.TeamId == model.TeamId);
+                team.PowerRating += entity.OverallScore;
+                team.Roster++;
                 return ctx.SaveChanges() == 1;
             }
         }
+
 
         public PlayerDetail GetPlayerById(int id)
         {
@@ -35,8 +39,28 @@ namespace Foseball.Services
                     Number = entity.Number,
                     Position = entity.Position,
                     TeamName = entity.Team.TeamName,
-                    InternationalTeam = entity.International.Name
+                    InternationalTeam = entity.International.Name,
+                    Passing = entity.Passing,
+                    Shooting = entity.Shooting,
+                    Defending = entity.Defending,
+                    OverallScore = entity.OverallScore,
                 };
+            }
+        }
+
+        public IEnumerable<PlayerListItem> GetAllPlayers()
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var playerList = ctx.Players.Select(e => new PlayerListItem
+                {
+                    Name = e.Name,
+                    Number = e.Number,
+                    Position = e.Position,
+                    PlayerId = e.Id,
+                    OverallScore = e.OverallScore,
+                });
+                return playerList.ToArray();
             }
         }
 
@@ -44,11 +68,27 @@ namespace Foseball.Services
         {
             using(var ctx = new FoseBallDbContext())
             {
-                var playerList = ctx.Players.Select(e => new PlayerListItem
+                var playerList = ctx.Players.Where(p => p.TeamId == teamId).Select(e => new PlayerListItem
                 {
                     Name = e.Name,
                     Number = e.Number,
                     Position = e.Position,
+                    PlayerId = e.Id,
+                });
+                return playerList.ToArray();
+            }
+        }
+
+        public IEnumerable<PlayerListItem> GetPlayersByPostition(int position)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var playerList = ctx.Players.Where(p => p.Position == (Position)position).Select(e => new PlayerListItem
+                {
+                    Name = e.Name,
+                    Number = e.Number,
+                    Position = e.Position,
+                    PlayerId = e.Id,
                 });
                 return playerList.ToArray();
             }
@@ -64,13 +104,13 @@ namespace Foseball.Services
                 entity.Number = player.Number;
                 entity.Position = player.Position;
                 entity.TeamId = player.TeamId;
-                entity.InternationalId = player.NationalityId;
+                entity.InternationalId = player.InternationalId;
 
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public bool DeleteNote(int playerId)
+        public bool DeletePlayer(int playerId)
         {
             using (var ctx = new FoseBallDbContext())
             {

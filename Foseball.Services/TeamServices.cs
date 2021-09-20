@@ -14,7 +14,7 @@ namespace Foseball.Services
 
         public bool CreateTeam(TeamCreate model)
         {
-            var entity = new Team() { TeamName = model.TeamName, LeagueId = model.LeagueId, Rank = model.Rank};
+            var entity = new Team() { TeamName = model.TeamName, LeagueId = model.LeagueId, Rank = model.Rank, PowerRating = 0 };
 
             using (var ctx = new FoseBallDbContext())
             {
@@ -34,7 +34,9 @@ namespace Foseball.Services
                     {
                         TeamId = e.TeamId,
                         TeamName = e.TeamName,
-                        Rank = e.Rank
+                        Rank = e.Rank,
+                        Roster = e.Roster,
+                        PowerRating = e.PowerRating/e.Roster,
                     }
                 );
                 return query.ToArray();
@@ -52,10 +54,32 @@ namespace Foseball.Services
                         TeamId = e.TeamId,
                         TeamName = e.TeamName,
                         Rank = e.Rank,
+                        Roster = e.Roster,
+                        PowerRating = e.PowerRating/e.Roster,
                     }
                 );
 
                 return query.ToArray();
+            }
+        }
+
+        public IEnumerable<TeamListItem> GetTeamsByLeagueRankSort(int id)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var query = ctx.Teams.Where(
+                    e => e.LeagueId == id
+                    ).Select(e => new TeamListItem
+                    {
+                        TeamId = e.TeamId,
+                        TeamName = e.TeamName,
+                        Rank = e.Rank,
+                        Roster = e.Roster,
+                        PowerRating = e.PowerRating/e.Roster,
+                    }
+                );
+                var ordered = query.OrderBy(e => e.Rank);
+                return ordered.ToArray();
             }
         }
 
@@ -69,6 +93,8 @@ namespace Foseball.Services
                     TeamName = entity.TeamName,
                     LeagueId = entity.LeagueId,
                     Rank = entity.Rank,
+                    Roster = entity.Roster,
+                    PowerRanking = entity.PowerRating/entity.Roster,
                 };
             }
         }
@@ -97,6 +123,7 @@ namespace Foseball.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
     }
 }
 

@@ -24,7 +24,7 @@ namespace FoseBall.WebAPI.Controllers
             var teams = teamServices.GetTeams();
             return Ok(teams);
         }
-
+        [HttpPost]
         public IHttpActionResult Post(TeamCreate team)
         {
             if (!ModelState.IsValid)
@@ -56,6 +56,16 @@ namespace FoseBall.WebAPI.Controllers
             return Ok(teams);
         }
 
+        [HttpGet]
+        [Route("api/Team/League/Sorted/{id}")]
+        public IHttpActionResult GetTeamsInLeagueSorted(int id)
+        {
+            TeamServices teamService = CreateTeamService();
+            var teams = teamService.GetTeamsByLeagueRankSort(id);
+            return Ok(teams);
+        }
+
+        [HttpPut]
         public IHttpActionResult Put(TeamEdit team)
         {
             if (!ModelState.IsValid)
@@ -71,6 +81,8 @@ namespace FoseBall.WebAPI.Controllers
             return Ok();
         }
 
+        [HttpDelete]
+        [Route("api/Team/Delete/{id}")]
         public IHttpActionResult Delete(int id)
         {
             var service = CreateTeamService();
