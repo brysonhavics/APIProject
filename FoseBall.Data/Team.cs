@@ -20,5 +20,8 @@ namespace FoseBall.Data
         public int MyProperty { get; set; }
         public virtual League League { get; set; }
         public virtual List<Player> Players { get; set; } = new List<Player>();
+        public int Wins { get; set; }
+        public int Losses { get; set; }
+        public int draw { get; set; }
     }
 }
