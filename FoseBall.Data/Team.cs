@@ -17,6 +17,7 @@ namespace FoseBall.Data
         public int Rank { get; set; }
         public int Roster { get; set; }
         public int PowerRating { get; set; }
+        public int MyProperty { get; set; }
         public virtual League League { get; set; }
         public virtual List<Player> Players { get; set; } = new List<Player>();
         public int Wins { get; set; }

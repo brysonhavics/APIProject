@@ -14,7 +14,7 @@ namespace Foseball.Services
 
         public bool CreatePlayer(PlayerCreate model)
         {
-            var entity = new Player() { Name = model.Name, Number = model.Number, InternationalId = model.InternationalId, Position = model.Position, TeamId = model.TeamId, Defending = model.Defending, Passing = model.Passing, Shooting = model.Shooting, OverallScore = ((model.Defending+model.Passing+model.Shooting)/3) };
+            var entity = new Player() { Name = model.Name, Number = model.Number, InternationalId = model.InternationalId, Position = (Position)model.Position, TeamId = model.TeamId, Defending = model.Defending, Passing = model.Passing, Shooting = model.Shooting, OverallScore = ((model.Defending+model.Passing+model.Shooting)/3) };
 
             using (var ctx = new FoseBallDbContext())
             {
@@ -25,6 +25,7 @@ namespace Foseball.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
 
         public PlayerDetail GetPlayerById(int id)
         {
@@ -78,11 +79,11 @@ namespace Foseball.Services
             }
         }
 
-        public IEnumerable<PlayerListItem> GetPlayersByPostition(string position)
+        public IEnumerable<PlayerListItem> GetPlayersByPostition(int position)
         {
             using (var ctx = new FoseBallDbContext())
             {
-                var playerList = ctx.Players.Where(p => p.Position == position).Select(e => new PlayerListItem
+                var playerList = ctx.Players.Where(p => p.Position == (Position)position).Select(e => new PlayerListItem
                 {
                     Name = e.Name,
                     Number = e.Number,
