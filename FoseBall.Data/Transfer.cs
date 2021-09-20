@@ -12,14 +12,18 @@ namespace FoseBall.Data
     {
         [Key]
         public int Id { get; set; }
-        [ForeignKey(nameof(Team))]
+        [Required]
         public int TeamId1 { get; set; }
-        [ForeignKey(nameof(Team))]
+        [Required]
         public int TeamId2 { get; set; }
+        [Required]
         public double Fee { get; set; }
+
         [ForeignKey(nameof(Player))]
         public int PlayerId { get; set; }
-        public virtual Team Team { get; set; } 
+
+
+        public virtual Team Team { get; set; }
         public virtual Player Player { get; set; }
 
     }
