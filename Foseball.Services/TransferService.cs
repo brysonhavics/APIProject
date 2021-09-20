@@ -19,7 +19,7 @@ namespace Foseball.Services
             using (var ctx = new FoseBallDbContext())
             {
                 Player player = ctx.Players.Single(e => e.Id == entity.PlayerId);
-                entity.TeamId1 = player.TeamId;
+                entity.TeamId2 = player.TeamId;
                 ctx.Transfers.Add(entity);
                 player.TeamId = entity.TeamId2;
                 return ctx.SaveChanges() == 1;
@@ -54,7 +54,7 @@ namespace Foseball.Services
                     TeamId2 = e.TeamId2,
                 });
 
-                return playerList;
+                return playerList.ToArray();
             }
         }
     }

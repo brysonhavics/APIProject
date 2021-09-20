@@ -12,6 +12,7 @@ namespace FoseBall.WebAPI.Controllers
     public class TransferController : ApiController
     {
         [HttpPost]
+        [Route("api/Transfer")]
         public IHttpActionResult PostTransfer(TransferCreate transfer)
         {
             if (!ModelState.IsValid)
@@ -26,6 +27,7 @@ namespace FoseBall.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Route("api/Transfer")]
         public IHttpActionResult GetAllTransfers()
         {
             TransferService transferService = CreateTransferService();
