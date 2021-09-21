@@ -17,4 +17,4 @@
 
 This program will allow you to follow your favorite teams, players and Leagues. The application will allow to add, get, delete and update Players, Leagues, and Coaches.
 
-![The Lord Returns](/assets/images/LordBendtner.jpg)
+![Foseball](/assets/images/LordBendtner.jpg)
