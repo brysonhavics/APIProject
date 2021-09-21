@@ -1,10 +1,10 @@
-**Player Get**
+**Transfer Get**
 ----
   Getting a single Player from the database form their PlayerId
 
 * **URL**
 
-  {Base Url}/api/Player/{id}
+  {Base Url}/api/Transfer/{id}
 
 * **Method:**
   
@@ -31,4 +31,4 @@
 
 * **Notes:**
 
-  If you request an Id that is not attached to a player than visual studio will throw an error. Input validation coming soon.  
+  If you request an Id that is not attached to a transfer than visual studio will throw an error. Input validation coming soon.  
