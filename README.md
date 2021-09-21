@@ -15,7 +15,8 @@
 > John Mai
 > ---
 
-This program will allow you to follow your favorite teams, players and Leagues. The application will allow to add, get, delete and update Players, Leagues, and Coaches. A goal we are hoping to accomplish is being able  to make team win or lose game depending on stats, this is will allow to climb the table and be that years champion.
+This program allows you to follow your favorite Teams, Players, and Leagues across the world. So far, the program allows the user to create and manage Leagues, Teams, Players, International Teams/Leagues, and Coaches. We've been working on adding functionality to allow the user to sim games and manage transactions across the leagues! The main stretch goal we are hoping to accomplish is to add real world wins, losses, and draws from real world data.
 
-![Foseball](https://user-images.githubusercontent.com/87817555/134223861-b5c18c53-b3e8-42b8-8a2b-8f5ff4a45081.jpg)
+Right now, to successfully use the program; it's dependent on first creating a league. Once you've got that accomplished you can move on to adding as many teams as you'd like to the league. We recommend sticking to the number of teams you set for the league when you created it. Once you're feeling accomplished enough on the team create front; you can begin to fill up the rosters of the team with the players that are on the team or that you would like to see on your favorite team. You want Neymar on MannU? No problem!
 
+![Foseball](/assets/images/LordBendtner.jpg)
