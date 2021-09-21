@@ -19,4 +19,5 @@ This program allows you to follow your favorite Teams, Players, and Leagues acro
 
 Right now, to successfully use the program; it's dependent on first creating a league. Once you've got that accomplished you can move on to adding as many teams as you'd like to the league. We recommend sticking to the number of teams you set for the league when you created it. Once you're feeling accomplished enough on the team create front; you can begin to fill up the rosters of the team with the players that are on the team or that you would like to see on your favorite team. You want Neymar on MannU? No problem!
 
-![Foseball](/assets/images/LordBendtner.jpg)
+![Foseball]![premier-league-season-preview-liverpool-title](https://user-images.githubusercontent.com/87817555/134224178-53d9c48a-519c-4653-a0c1-45757edf5ce3.jpg)
+
