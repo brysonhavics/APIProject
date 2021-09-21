@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Foseball.Services;
+using FoseBall.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,31 +11,52 @@ namespace FoseBall.WebAPI.Controllers
 {
     public class GameController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        private GameServices CreateGameService()
         {
-            return new string[] { "value1", "value2" };
+            var gameService = new GameServices();
+            return gameService;
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        [HttpPost]
+        public IHttpActionResult Post(GameCreate game)
         {
-            return "value";
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateGameService();
+
+            if (!service.CreateGame(game))
+                return InternalServerError();
+
+            return Ok();
         }
 
-        // POST api/<controller>
-        public void Post([FromBody] string value)
+        [HttpGet]
+        public IHttpActionResult Get()
         {
+            GameServices gameServices = CreateGameService();
+            var games = gameServices.GetGames();
+            return Ok(games);
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
+        [HttpGet]
+        [Route("api/Game/{id}")]
+        public IHttpActionResult GetGameById(int id)
         {
+            GameServices gameService = CreateGameService();
+            var game = gameService.GetGameById(id);
+            return Ok(game);
         }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
+        [HttpDelete]
+        [Route("api/Game/Delete/{id}")]
+        public IHttpActionResult Delete(int id)
         {
+            var service = CreateGameService();
+            if (!service.DeleteGame(id))
+                return InternalServerError();
+
+            return Ok();
         }
     }
 }

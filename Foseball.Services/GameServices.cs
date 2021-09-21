@@ -60,6 +60,33 @@ namespace Foseball.Services
             }
         }
 
+        public GameDetail GetGameById(int id)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var entity = ctx.Games.Single(e => e.GameId == id);
+                return new GameDetail
+                {
+                    GameId = entity.GameId,
+                    HomeName = entity.HomeName,
+                    AwayName = entity.AwayName,
+                    Referee = entity.Referee,
+                    Result = entity.Result
+                };
+              
+            }
+        }
 
+        public bool DeleteGame(int gameId)
+        {
+            using (var ctx = new FoseBallDbContext())
+            {
+                var entity = ctx.Games.Single(e => e.GameId == gameId);
+
+                ctx.Games.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
