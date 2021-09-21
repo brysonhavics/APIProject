@@ -11,10 +11,9 @@ namespace FoseBall.Model
     {
         [Required]
         public double Fee { get; set; }
-        [Display(Name ="Old Team")]
-        [Required]
-        public int TeamId1 { get; set; }
         [Display(Name ="New Team")]
+        [Required]
+        public int NewTeam { get; set; }
         [Required]
         public int PlayerId { get; set; }
     }
