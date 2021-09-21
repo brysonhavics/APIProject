@@ -1,10 +1,10 @@
-**Players Gets**
+**Game Get**
 ----
-  Get all players from the DataBase
+  Gets all games from the Database
 
 * **URL**
 
-  {Base Url}/api/Player
+  {Base Url}/api/Game
 
 * **Method:**
   
@@ -18,10 +18,9 @@
    **Required:**
     
     None
+   `id=[integer]`
 
 * **Data Params**
-
-   None
 
 * **Success Response:**
   
@@ -29,6 +28,8 @@
  
 * **Error Response:**
 
+    None
+
 * **Notes:**
 
-  Should return a list of all of the players and some details about them. If nothing comes up your table is probably empty.
+    

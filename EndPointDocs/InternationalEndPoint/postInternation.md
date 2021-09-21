@@ -1,10 +1,10 @@
 **Player Post**
 ----
-  Posting a single player to the Database
+  Posting a single international team to the Database
 
 * **URL**
 
-  {Base Url}/api/Player
+  {Base Url}/api/International
 
 * **Method:**
   
@@ -22,14 +22,9 @@
 
 * **Data Params**
 
-   Name: string\
-   Number: Int\
-   Position: Int\
-   TeamId: Int\
-   InternationalId: Int\
-   Shooting: Int (0-99)\
-   Passing: Int (0-99)\
-   Defending: Int (0-99)
+   Coach: string\
+   Ranking: int\
+   Name; string\
 
 * **Success Response:**
   
@@ -46,4 +41,4 @@
 
 * **Notes:**
 
-  Make sure you have data stored in the League, Team, and international tables before posting, input validation coming soon.  
+ allows user to post international team
