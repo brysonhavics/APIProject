@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="CoachCreate.cs" />
     <Compile Include="CoachDetail.cs" />
+    <Compile Include="CoachEdit.cs" />
     <Compile Include="CoachListItem.cs" />
     <Compile Include="GameCreate.cs" />
     <Compile Include="GameDetail.cs" />
