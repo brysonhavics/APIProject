@@ -21,3 +21,15 @@ Right now, to successfully use the program; it's dependent on first creating a l
 
 
 ![premier-league-season-preview-liverpool-title](https://user-images.githubusercontent.com/87817555/134224470-652449f8-d8ff-450a-82e9-2c96eaaa4498.jpg)
+
+
+## End Point Documentation
+|     League    |         Team         | International |         Player         |  Transfer |           Coach          |    Game   |
+|:-------------:|:--------------------:|:-------------:|:----------------------:|:---------:|:------------------------:|:---------:|
+|      Post     |         Post         |      Post     |          Post          |    Post   |           Post           |    Post   |
+|    Get All    |        Get All       |    Get All    |         Get All        |  Get All  |          Get All         |  Get All  |
+|   Get by Id   |       Get by Id      |       -       |        Get by Id       | Get by ID |         Get by ID        | Get by Id |
+| Get by Nation |     Get by League    |       -       | Get Player by Position |     -     | Get Coach By Nationality |     -     |
+|       -       | Get By League Sorted |       -       |   Get Player by Team   |     -     |             -            |     -     |
+|     Delete    |        Delete        |     Delete    |         Delete         |     -     |             -            |   Delete  |
+|      Put      |          Put         |      Put      |           Put          |     -     |            Put           |     -     |
