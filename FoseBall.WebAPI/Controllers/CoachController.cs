@@ -35,7 +35,7 @@ namespace FoseBall.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("api/Coach/Nationality/{nation}")]
+        [Route("api/Coach/Nationality/{nationality}")]
         public IHttpActionResult Get(string nationality)
         {
             CoachService coachService = CreateCoachService();
