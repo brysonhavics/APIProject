@@ -13,9 +13,9 @@ namespace FoseBall.Data
         [Key]
         public int Id { get; set; }
         [Required]
-        public int TeamId1 { get; set; }
+        public int OldTeam { get; set; }
         [Required]
-        public int TeamId2 { get; set; }
+        public int NewTeam { get; set; }
         [Required]
         public double Fee { get; set; }
 

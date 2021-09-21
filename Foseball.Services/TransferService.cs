@@ -14,15 +14,15 @@ namespace Foseball.Services
 
         public bool CreateTransfer(TransferCreate transfer)
         {
-            var entity = new Transfer() { TeamId1 = transfer.TeamId1, Fee = transfer.Fee, PlayerId = transfer.PlayerId };
+            var entity = new Transfer() { NewTeam = transfer.NewTeam, Fee = transfer.Fee, PlayerId = transfer.PlayerId };
 
             using (var ctx = new FoseBallDbContext())
             {
                 Player player = ctx.Players.Single(e => e.Id == entity.PlayerId);
-                entity.TeamId2 = player.TeamId;
+                entity.OldTeam = player.TeamId;
                 ctx.Transfers.Add(entity);
-                player.TeamId = entity.TeamId2;
-                return ctx.SaveChanges() == 1;
+                player.TeamId = entity.NewTeam;
+                return ctx.SaveChanges() == 2;
             }
         }
 
@@ -36,8 +36,8 @@ namespace Foseball.Services
                 {
                     Fee = entity.Fee,
                     PlayerId = entity.PlayerId,
-                    TeamId1 = entity.TeamId1,
-                    TeamId2 = entity.TeamId2,
+                    OldTeam = entity.OldTeam,
+                    NewTeam = entity.NewTeam,
                 };
             }
         }
@@ -50,8 +50,8 @@ namespace Foseball.Services
                 {
                     Fee = e.Fee,
                     PlayerId = e.PlayerId,
-                    TeamId1 = e.TeamId1,
-                    TeamId2 = e.TeamId2,
+                    OldTeam = e.OldTeam,
+                    NewTeam = e.NewTeam,
                 });
 
                 return playerList.ToArray();
