@@ -58,6 +58,7 @@
     <Compile Include="CoachListItem.cs" />
     <Compile Include="GameCreate.cs" />
     <Compile Include="GameDetail.cs" />
+    <Compile Include="GameListItem.cs" />
     <Compile Include="InternationalDetail.cs" />
     <Compile Include="InternationalCreate.cs" />
     <Compile Include="InternationalEdit.cs" />
