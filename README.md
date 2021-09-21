@@ -17,4 +17,5 @@
 
 This program will allow you to follow your favorite teams, players and Leagues. The application will allow to add, get, delete and update Players, Leagues, and Coaches. A goal we are hoping to accomplish is being able  to make team win or lose game depending on stats, this is will allow to climb the table and be that years champion.
 
-![Foseball](/assets/images/LordBendtner.jpg)
+![Foseball](https://user-images.githubusercontent.com/87817555/134223861-b5c18c53-b3e8-42b8-8a2b-8f5ff4a45081.jpg)
+
