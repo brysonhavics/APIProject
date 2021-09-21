@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoachDetail.cs" />
     <Compile Include="CoachListItem.cs" />
     <Compile Include="GameCreate.cs" />
     <Compile Include="GameDetail.cs" />
