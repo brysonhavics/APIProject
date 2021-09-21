@@ -1,4 +1,5 @@
 ﻿using Foseball.Services;
+using FoseBall.Data;
 using FoseBall.Model;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,15 @@ namespace FoseBall.WebAPI.Controllers
         }
 
         [HttpGet]
+        public IHttpActionResult GetAllPlayers()
+        {
+            PlayerService playerService = CreatePlayerService();
+            var players = playerService.GetAllPlayers();
+            return Ok(players);
+        }
+
+        [HttpGet]
+        [Route("api/Player/{id}")]
         public IHttpActionResult GetPlayerById(int id)
         {
             PlayerService playerService = CreatePlayerService();
@@ -34,17 +44,28 @@ namespace FoseBall.WebAPI.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetPlayersByTeam([FromBody]int id)
+        [Route("api/Player/Team/{id}")]
+        public IHttpActionResult GetPlayersByTeam(int id)
         {
             PlayerService playerService = CreatePlayerService();
-            var player = playerService.GetPlayersByTeam(id);
-            return Ok();
+            var players = playerService.GetPlayersByTeam(id);
+            return Ok(players);
+        }
+
+
+        [HttpGet]
+        [Route("api/Player/Position/{position}")]
+        public IHttpActionResult GetPlayersByPosition(int position)
+        {
+            PlayerService playerService = CreatePlayerService();
+            var players = playerService.GetPlayersByPostition(position);
+            return Ok(players);
         }
 
         [HttpPut]
         public IHttpActionResult EditPlayers(PlayerEdit player)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var service = CreatePlayerService();
@@ -56,10 +77,11 @@ namespace FoseBall.WebAPI.Controllers
         }
 
         [HttpDelete]
+        [Route("api/Player/{id}")]
         public IHttpActionResult DeletePlayer(int id)
         {
             var service = CreatePlayerService();
-            if (!service.DeleteNote(id))
+            if (!service.DeletePlayer(id))
                 return InternalServerError();
 
             return Ok();

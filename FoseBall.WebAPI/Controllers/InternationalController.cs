@@ -17,6 +17,14 @@ namespace FoseBall.WebAPI
             return InternationalService;
         }
 
+        [HttpGet]
+        public IHttpActionResult Get()
+        {
+            InternationalService internationalService = CreateInternationalService();
+            var international = internationalService.GetAllInternational();
+            return Ok(international);
+        }
+
         [HttpPost]
         public IHttpActionResult Post(InternationalCreate international)
         {
@@ -45,11 +53,12 @@ namespace FoseBall.WebAPI
         }
 
         [HttpDelete]
-        public IHttpActionResult Delete(int international)
+        [Route("api/International/{id}")]
+        public IHttpActionResult Delete(int id)
         {
             var service = CreateInternationalService();
 
-            if (!service.DeleteInternational(international))
+            if (!service.DeleteInternational(id))
                 return InternalServerError();
 
             return Ok();

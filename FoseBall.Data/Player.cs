@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace FoseBall.Data
 {
+    public enum Position { Forward=0,Midfield,Defender,Goalkeeper}
     public class Player
     {
         [Key]
@@ -16,12 +17,28 @@ namespace FoseBall.Data
         public string Name { get; set; }
         [Required]
         public int Number { get; set; }
+
+        [Required]
+        [Range(0,99)]
+        public int Shooting { get; set; }
+        [Required]
+        [Range(0,99)]
+        public int Passing { get; set; }
+        [Required]
+        [Range(0,99)]
+        public int Defending { get; set; }
+
+        [Display(Name = "Overall Score")]
+        public int OverallScore { get; set; }
+
         [ForeignKey(nameof(Team))]
         public int TeamId { get; set; }
+
         [ForeignKey(nameof(International))]
         public int InternationalId { get; set; }
+
         [Required]
-        public string Position { get; set; }
+        public Position Position { get; set; }
 
         public virtual Team Team { get; set; }
         public virtual International International { get; set; }

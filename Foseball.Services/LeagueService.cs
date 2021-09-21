@@ -33,6 +33,7 @@ namespace Foseball.Services
             {
                 var searchy = ctx.Leagues.Select(e => new LeagueListItem
                 {
+                    LeagueId = e.LeagueId,
                     Name = e.Name,
                     Nation = e.Nation,
                     NumberOfTeams = e.NumberOfTeams
@@ -49,6 +50,7 @@ namespace Foseball.Services
                 var entity = ctx.Leagues.Single(e => e.LeagueId == id);
                 return new LeagueDetail
                 {
+                    LeagueId = entity.LeagueId,
                     Name = entity.Name,
                     NumberOfTeams = entity.NumberOfTeams,
                     Nation = entity.Nation
@@ -63,6 +65,7 @@ namespace Foseball.Services
                 var entity = ctx.Leagues.Single(e => e.Nation == nation);
                 return new LeagueDetail
                 {
+                    LeagueId = entity.LeagueId,
                     Name = entity.Name,
                     NumberOfTeams= entity.NumberOfTeams,
                     Nation = entity.Nation

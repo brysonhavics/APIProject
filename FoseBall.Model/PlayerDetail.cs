@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoseBall.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,6 +16,11 @@ namespace FoseBall.Model
         public string TeamName { get; set; }
         [Display(Name = "International Team")]
         public string InternationalTeam { get; set; }
-        public string Position { get; set; }
+        public Position Position { get; set; }
+        public int Shooting { get; set; }
+        public int Passing { get; set; }
+        public int Defending { get; set; }
+        public int OverallScore { get; set; }
+        
     }
 }
