@@ -1,6 +1,6 @@
-**Player Post**
+**Player Put**
 ----
-  Posting a single player to the Database
+  Updating a player in the databases based off of the player id.
 
 * **URL**
 
@@ -8,27 +8,21 @@
 
 * **Method:**
   
-  Post
+  Put
 
   
 *  **URL Params**
 
-    None
-
    **Required:**
-    
-    None
 
 * **Data Params**
 
+   PlayerId: Int\
    Name: string\
    Number: Int\
    Position: Int\
    TeamId: Int\
    InternationalId: Int\
-   Shooting: Int (0-99)\
-   Passing: Int (0-99)\
-   Defending: Int (0-99)
 
 * **Success Response:**
   
@@ -36,7 +30,8 @@
  
 * **Error Response:**
 
-  * **Code:** 400 BadRequest <br />
+* **Code:**\
+    * 400 BadRequest <br />
     **Content:** `{ error : Model State }`
 
   OR
@@ -45,4 +40,4 @@
 
 * **Notes:**
 
-  Make sure you have data stored in the League, Team, and international tables before posting, input validation coming soon.  
+  The PlayerId only specifies what player you want to change based off of Id. You can not edit this number. So, enter the Id of the player you want to change in that body parameter. 
