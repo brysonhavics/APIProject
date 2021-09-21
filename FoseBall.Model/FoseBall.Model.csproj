@@ -76,6 +76,7 @@
     <Compile Include="TeamListItem.cs" />
     <Compile Include="TeamDetail.cs" />
     <Compile Include="TransferCreate.cs" />
+    <Compile Include="TransferDetail.cs" />
     <Compile Include="TransferListItem.cs" />
   </ItemGroup>
   <ItemGroup>

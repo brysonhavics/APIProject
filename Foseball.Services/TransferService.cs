@@ -26,18 +26,20 @@ namespace Foseball.Services
             }
         }
 
-        public TransferListItem GetTransferById(int id)
+        public TransferDetail GetTransferById(int id)
         {
             using (var ctx = new FoseBallDbContext())
             {
                 var entity = ctx.Transfers.Single(e => e.Id == id);
-
-                return new TransferListItem
+                var oldTeam = ctx.Teams.Single(e => e.TeamId == entity.OldTeam);
+                var newTeam = ctx.Teams.Single(e => e.TeamId == entity.NewTeam);
+                var player = ctx.Players.Single(e => e.Id == entity.PlayerId);
+                return new TransferDetail
                 {
                     Fee = entity.Fee,
-                    PlayerId = entity.PlayerId,
-                    OldTeam = entity.OldTeam,
-                    NewTeam = entity.NewTeam,
+                    Player = player.Name,
+                    OldTeam = oldTeam.TeamName,
+                    NewTeam = newTeam.TeamName,
                 };
             }
         }
@@ -46,15 +48,16 @@ namespace Foseball.Services
         {
             using (var ctx = new FoseBallDbContext())
             {
-                var playerList = ctx.Transfers.Select(e => new TransferListItem
-                {
-                    Fee = e.Fee,
-                    PlayerId = e.PlayerId,
-                    OldTeam = e.OldTeam,
-                    NewTeam = e.NewTeam,
-                });
+                var query = ctx.Transfers.Select(
+                    e =>
+                    new TransferListItem
+                    {
+                        Fee = e.Fee,
+                        PlayerId = e.PlayerId,
+                        TransferId = e.Id,
+                    });
 
-                return playerList.ToArray();
+                return query.ToArray();
             }
         }
     }

@@ -9,16 +9,9 @@ namespace FoseBall.Model
 {
     public class TransferListItem
     {
-        [Required]
-        public double Fee { get; set; }
-        [Display(Name = "Old Team")]
-        [Required]
-        public int OldTeam { get; set; }
-        [Display(Name = "New Team")]
-        [Required]
-        public int NewTeam { get; set; }
+        public int TransferId { get; set; }
         [Display(Name = "Player")]
-        [Required]
         public int PlayerId { get; set; }
+        public double Fee { get; set; }
     }
 }
