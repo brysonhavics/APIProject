@@ -36,7 +36,7 @@ namespace Foseball.Services
                         TeamName = e.TeamName,
                         Rank = e.Rank,
                         Roster = e.Roster,
-                        PowerRating = e.PowerRating/e.Roster,
+                        PowerRating = e.Roster == 0 ? 0 : e.PowerRating/e.Roster,
                         Wins = e.Wins,
                         Losses = e.Losses,
                         Draws = e.Draws,
