@@ -1,10 +1,10 @@
-**Player Post**
+**Team Post**
 ----
-  Posting a single international team to the Database
+  Posting a single team to the Database
 
 * **URL**
 
-  {Base Url}/api/International
+  {Base Url}/api/Team
 
 * **Method:**
   
@@ -22,9 +22,9 @@
 
 * **Data Params**
 
-   Coach: string\
-   Ranking: int\
-   Name; string\
+   TeamName: string\ (Max Length: 40)
+   LeagueId: Int\
+   Rank: Int\
 
 * **Success Response:**
   
@@ -41,4 +41,4 @@
 
 * **Notes:**
 
- allows user to post international team
+  Make sure you have data stored in the League table before posting, input validation coming soon.  

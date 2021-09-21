@@ -1,14 +1,14 @@
-**Player Post**
+  **Team Put**
 ----
-  Posting a single international team to the Database
+  Updating a single team on the Database
 
 * **URL**
 
-  {Base Url}/api/International
+  {Base Url}/api/Team/
 
 * **Method:**
   
-  Post
+  Put
 
   
 *  **URL Params**
@@ -22,9 +22,10 @@
 
 * **Data Params**
 
-   Coach: string\
-   Ranking: int\
-   Name; string\
+    TeamId: Int\
+    TeamName: string\
+    Rank: Int\
+    LeagueId: Int\
 
 * **Success Response:**
   
@@ -41,4 +42,4 @@
 
 * **Notes:**
 
- allows user to post international team
+  This will likely used for possible promotion/relegation scenarios and wins/losses moving ranks up

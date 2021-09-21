@@ -1,19 +1,19 @@
-**Player Post**
+**Team Delete**
 ----
-  Posting a single international team to the Database
+  Deleting a single team to the Database
 
 * **URL**
 
-  {Base Url}/api/International
+  {Base Url}/api/Team/Delete
 
 * **Method:**
   
-  Post
+  Delete
 
   
 *  **URL Params**
 
-    None
+    id: Int\
 
    **Required:**
     
@@ -21,10 +21,6 @@
    `id=[integer]`
 
 * **Data Params**
-
-   Coach: string\
-   Ranking: int\
-   Name; string\
 
 * **Success Response:**
   
@@ -41,4 +37,4 @@
 
 * **Notes:**
 
- allows user to post international team
+  Make sure you really want to delete this team.

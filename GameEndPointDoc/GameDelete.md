@@ -1,19 +1,19 @@
-**Player Post**
+**Game Delete**
 ----
-  Posting a single international team to the Database
+  Deleting a single game from the Database
 
 * **URL**
 
-  {Base Url}/api/International
+  {Base Url}/api/Game/{id}
 
 * **Method:**
   
-  Post
+  Delete
 
   
 *  **URL Params**
 
-    None
+    Id: Int\
 
    **Required:**
     
@@ -21,10 +21,6 @@
    `id=[integer]`
 
 * **Data Params**
-
-   Coach: string\
-   Ranking: int\
-   Name; string\
 
 * **Success Response:**
   
@@ -35,10 +31,6 @@
   * **Code:** 400 BadRequest <br />
     **Content:** `{ error : Model State }`
 
-  OR
-
-  * **Code:** 500 Internal Server Error 
-
 * **Notes:**
 
- allows user to post international team
+  Make sure you really want that game deleted.  

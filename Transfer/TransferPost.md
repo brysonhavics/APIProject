@@ -1,10 +1,10 @@
-**Player Post**
+**Transfer Post**
 ----
-  Posting a single international team to the Database
+  Adding a single transfer to the transfer table
 
 * **URL**
 
-  {Base Url}/api/International
+  {Base Url}/api/Transfer
 
 * **Method:**
   
@@ -18,13 +18,12 @@
    **Required:**
     
     None
-   `id=[integer]`
 
 * **Data Params**
 
-   Coach: string\
-   Ranking: int\
-   Name; string\
+   Fee: Double\
+   NewTeam: int\
+   PlayerId: int\
 
 * **Success Response:**
   
@@ -41,4 +40,4 @@
 
 * **Notes:**
 
- allows user to post international team
+  Make sure you have data stored in the League, Team, International, and players tables before posting, input validation coming soon.  

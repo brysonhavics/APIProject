@@ -1,10 +1,10 @@
-**Players Get**
+**Players Delete**
 ----
-  Get all players from the DataBase
+  Removing one player from the database
 
 * **URL**
 
-  {Base Url}/api/Player
+  {Base Url}/api/Player/{id}
 
 * **Method:**
   
@@ -13,7 +13,7 @@
   
 *  **URL Params**
 
-    None
+    `{id} = [int]`
 
    **Required:**
     
@@ -31,4 +31,4 @@
 
 * **Notes:**
 
-  Should return a list of all of the players and some details about them. If nothing comes up your table is probably empty.
+  Removes one player from the database. Put the id of the player you want to delete in the Url. 

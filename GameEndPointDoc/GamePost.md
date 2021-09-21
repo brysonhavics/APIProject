@@ -1,10 +1,10 @@
-**Player Post**
+**Game Post**
 ----
-  Posting a single international team to the Database
+  Posting a game between teams to the Database
 
 * **URL**
 
-  {Base Url}/api/International
+  {Base Url}/api/Game
 
 * **Method:**
   
@@ -22,9 +22,9 @@
 
 * **Data Params**
 
-   Coach: string\
-   Ranking: int\
-   Name; string\
+   HomeId: Int\ 
+   AwayId: Int\
+   Referee: String\
 
 * **Success Response:**
   
@@ -41,4 +41,4 @@
 
 * **Notes:**
 
- allows user to post international team
+  You'll need to have made teams and ideally included players with those teams. HomeId and AwayId are the ids of specific teams.  
