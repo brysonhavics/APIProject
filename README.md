@@ -15,6 +15,6 @@
 > John Mai
 > ---
 
-This program will allow you to follow your favorite teams, players and Leagues. The application will allow to add, get, delete and update Players, Leagues, and Coaches.
+This program will allow you to follow your favorite teams, players and Leagues. The application will allow to add, get, delete and update Players, Leagues, and Coaches. A goal we are hoping to accomplish is being able  to make team win or lose game depending on stats, this is will allow to climb the table and be that years champion.
 
 ![Foseball](/assets/images/LordBendtner.jpg)
