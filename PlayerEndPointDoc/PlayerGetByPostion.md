@@ -1,4 +1,4 @@
-**Player Post**
+**Player Get**
 ----
   Getting a list of players from the database given an entered position. 
 

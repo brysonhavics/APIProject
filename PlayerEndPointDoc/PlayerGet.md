@@ -1,4 +1,4 @@
-**Players Gets**
+**Players Get**
 ----
   Get all players from the DataBase
 
