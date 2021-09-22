@@ -26,10 +26,10 @@ Right now, to successfully use the program; it's dependent on first creating a l
 ## End Point Documentation
 |     League    |         Team         | International |         Player         |  Transfer |           Coach          |    Game   |
 |:-------------:|:--------------------:|:-------------:|:----------------------:|:---------:|:------------------------:|:---------:|
-|      Post     |         Post         |      Post     |          Post          |    Post   |           Post           |    Post   |
-|    Get All    |        Get All       |    Get All    |         Get All        |  Get All  |          Get All         |  Get All  |
-|   Get by Id   |       Get by Id      |       -       |        Get by Id       | Get by ID |         Get by ID        | Get by Id |
-| Get by Nation |     Get by League    |       -       | Get Player by Position |     -     | Get Coach By Nationality |     -     |
+|      [Post](EndPointDocs\LeagueEndPoint\LeaguePost.md)     |         Post         |      Post     |          Post          |    Post   |           Post           |    Post   |
+|    [Get All](EndPointDocs\LeagueEndPoint\LeagueGet.md)    |        Get All       |    Get All    |         Get All        |  Get All  |          Get All         |  Get All  |
+|   [Get by Id](EndPointDocs\LeagueEndPoint\LeagueGetById.md)   |       Get by Id      |       -       |        Get by Id       | Get by ID |         Get by ID        | Get by Id |
+| [Get by Nation](EndPointDocs\LeagueEndPoint\LeagueGetByNation.md) |     Get by League    |       -       | Get Player by Position |     -     | Get Coach By Nationality |     -     |
 |       -       | Get By League Sorted |       -       |   Get Player by Team   |     -     |             -            |     -     |
-|     Delete    |        Delete        |     Delete    |         Delete         |     -     |             -            |   Delete  |
-|      Put      |          Put         |      Put      |           Put          |     -     |            Put           |     -     |
+|     [Delete](EndPointDocs\LeagueEndPoint\LeagueDelete.md)    |        Delete        |     Delete    |         Delete         |     -     |             -            |   Delete  |
+|      [Put](EndPointDocs\LeagueEndPoint\LeagueUpdate.md)      |          Put         |      Put      |           Put          |     -     |            Put           |     -     |
