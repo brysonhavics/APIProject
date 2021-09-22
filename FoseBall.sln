@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoseBall.Model", "FoseBall.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foseball.Services", "Foseball.Services\Foseball.Services.csproj", "{BE5D1669-EB8C-486C-A39F-F10747D4C380}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoseballConsoleApp", "FoseballConsoleApp\FoseballConsoleApp.csproj", "{BD01F225-F332-4670-BC72-36B37C851C1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BE5D1669-EB8C-486C-A39F-F10747D4C380}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE5D1669-EB8C-486C-A39F-F10747D4C380}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE5D1669-EB8C-486C-A39F-F10747D4C380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD01F225-F332-4670-BC72-36B37C851C1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD01F225-F332-4670-BC72-36B37C851C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD01F225-F332-4670-BC72-36B37C851C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD01F225-F332-4670-BC72-36B37C851C1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
