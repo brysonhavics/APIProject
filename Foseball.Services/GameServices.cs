@@ -40,7 +40,7 @@ namespace Foseball.Services
                 }
                
                 ctx.Games.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges() == 3;
             }
         }
 
